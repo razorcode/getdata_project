@@ -1,0 +1,32 @@
+This code book describes the variables used in the script "run_analysis.R"
+The variables are described in order of appearance as in the script and the steps.
+For example, in step 1. "Merges the training and the test sets to create one data set", there are 3 variables: Xy_train, Xy_test and Xy_train_test.
+----------------------
+Read data
+The variables in this section have similar names as its data files name.
+For example, data in the file "X_train.txt" is read as X_train
+There are 8 files to be read
+----------------------
+Step 1.
+Xy_train: Merged data of subject_train, y_train and X_train by columns (used cbind())
+Xy_test: Merged data of subject_test, y_test and X_test by columns
+Xy_train_test: Merged data of the training and test data sets
+----------------------
+Step 2.
+col_mean_std: vector index of variables whose name includes "mean", "Mean" or "std"
+Xy_train_test_ext: Data with only the measurements on the mean and standard deviation for each measurement. 
+There are several temporary variables in this section: Xy_train_test_temp, Xy_train_test_ext_temp 
+----------------------
+Step 3.
+There is no new variable
+----------------------
+Step 4.
+There is no new variable
+----------------------
+Step 5.
+average_table: final data of this step, containing the average of each variable for each activity and each subject (from 3rd column). The first 2 columns are Subject and Activity
+table_ij: a subset of Xy_train_test_ext in Step 2 for given Suject and given Activity
+value_average: row vector of the average of each variable for each activity and each subject. The first 2 values are Subject and Activity
+names_average: row vector of the names of the average of each variable. For example, the average of the variable "tBodyAcc-mean()-X " will have the name "Average- tBodyAcc-mean()-X "
+----------------------
+Read the output file: data<-read.table("data_course_project.txt", header = TRUE)
